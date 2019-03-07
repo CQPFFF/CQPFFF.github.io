@@ -68,6 +68,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-辗转相除法求最大公约数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/08/辗转相除法求最大公约数/" class="article-date">
+  <time datetime="2019-03-07T17:12:40.973Z" itemprop="datePublished">2019-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 辗转相除法求最大公约数<br>date: 2019-03-08 01:12:40</p>
+<h2 id="tags-算法证明"><a href="#tags-算法证明" class="headerlink" title="tags:算法证明"></a>tags:算法证明</h2><h1 id="辗转相除法证明"><a href="#辗转相除法证明" class="headerlink" title="辗转相除法证明"></a>辗转相除法证明</h1><h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><h4 id="gt-辗转相除法，-又名欧几里德算法（Euclidean-algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。"><a href="#gt-辗转相除法，-又名欧几里德算法（Euclidean-algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。" class="headerlink" title="&gt;辗转相除法， 又名欧几里德算法（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。"></a>&gt;辗转相除法， 又名<a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%B7%E7%AE%97%E6%B3%95/9002848" target="_blank" rel="external">欧几里德算法</a>（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。</h4><hr>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><pre><code>思路：function gcd(a,b) 
+</code></pre><p>{<br>if b&lt; &gt;0<br>        return gcd(b,a mod b);<br>else<br>        return a；<br>}</p>
+<hr>
+<p>辗转相除法<br>定理： gcd(a, b) = gcd(b, a mod b)<br>证明：<br>a可以表示成a = kb + r, 则r = a mod b<br>假设d是a, b的一个公约数, 则有 d|a, d|b, 而r = a - kb, 因此d|r.<br>因此,d是(b, a mod b)的公约数.<br>加上d是(b,a mod b)的公约数,则d|b, d|r, 但是a = kb + r,因此d也是(a, b)的公约数.<br>因此,(a, b) 和(a, a mod b)的公约数是一样的,其最大公约数也必然相等,得证.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="www.alumocro.top/2019/03/08/辗转相除法求最大公约数/" data-id="cjsywjj2k0001r0us4c1ft9uv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/03/hello-world/" class="article-date">
@@ -174,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="www.alumocro.top/2019/03/03/hello-world/" data-id="cjsywf8vk000090us2tn5whw6" class="article-share-link">Share</a>
+      <a data-url="www.alumocro.top/2019/03/03/hello-world/" data-id="cjsywjj2b0000r0usww9x60tw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,6 +245,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/08/辗转相除法求最大公约数/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2019/03/03/hello-world/">Hello World</a>

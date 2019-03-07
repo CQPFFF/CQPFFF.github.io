@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>辗转相除法的证明</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: 辗转相除法求最大公约数date: 2019-03-08 01:12:40
+tags:算法证明辗转相除法证明算法简介&amp;gt;辗转相除法， 又名欧几里德算法（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="辗转相除法的证明">
+<meta property="og:url" content="www.alumocro.top/2019/03/08/辗转相除法求最大公约数/index.html">
+<meta property="og:site_name" content="辗转相除法的证明">
+<meta property="og:description" content="title: 辗转相除法求最大公约数date: 2019-03-08 01:12:40
+tags:算法证明辗转相除法证明算法简介&amp;gt;辗转相除法， 又名欧几里德算法（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最">
+<meta property="og:updated_time" content="2019-03-07T17:25:04.526Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="辗转相除法的证明">
+<meta name="twitter:description" content="title: 辗转相除法求最大公约数date: 2019-03-08 01:12:40
+tags:算法证明辗转相除法证明算法简介&amp;gt;辗转相除法， 又名欧几里德算法（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最">
+  
+    <link rel="alternate" href="/atom.xml" title="辗转相除法的证明" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">辗转相除法的证明</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">欧几里得算法的证明</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="www.alumocro.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-辗转相除法求最大公约数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/08/辗转相除法求最大公约数/" class="article-date">
+  <time datetime="2019-03-07T17:12:40.973Z" itemprop="datePublished">2019-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 辗转相除法求最大公约数<br>date: 2019-03-08 01:12:40</p>
+<h2 id="tags-算法证明"><a href="#tags-算法证明" class="headerlink" title="tags:算法证明"></a>tags:算法证明</h2><h1 id="辗转相除法证明"><a href="#辗转相除法证明" class="headerlink" title="辗转相除法证明"></a>辗转相除法证明</h1><h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><h4 id="gt-辗转相除法，-又名欧几里德算法（Euclidean-algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。"><a href="#gt-辗转相除法，-又名欧几里德算法（Euclidean-algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。" class="headerlink" title="&gt;辗转相除法， 又名欧几里德算法（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。"></a>&gt;辗转相除法， 又名<a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%B7%E7%AE%97%E6%B3%95/9002848" target="_blank" rel="external">欧几里德算法</a>（Euclidean algorithm），是求最大公约数的一种方法。它的具体做法是：用较大数除以较小数，再用出现的余数（第一余数）去除除数，再用出现的余数（第二余数）去除第一余数，如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。</h4><hr>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><pre><code>思路：function gcd(a,b) 
+</code></pre><p>{<br>if b&lt; &gt;0<br>        return gcd(b,a mod b);<br>else<br>        return a；<br>}</p>
+<hr>
+<p>辗转相除法<br>定理： gcd(a, b) = gcd(b, a mod b)<br>证明：<br>a可以表示成a = kb + r, 则r = a mod b<br>假设d是a, b的一个公约数, 则有 d|a, d|b, 而r = a - kb, 因此d|r.<br>因此,d是(b, a mod b)的公约数.<br>加上d是(b,a mod b)的公约数,则d|b, d|r, 但是a = kb + r,因此d也是(a, b)的公约数.<br>因此,(a, b) 和(a, a mod b)的公约数是一样的,其最大公约数也必然相等,得证.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="www.alumocro.top/2019/03/08/辗转相除法求最大公约数/" data-id="cjsywjj2k0001r0us4c1ft9uv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/08/辗转相除法求最大公约数/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/03/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Fidxx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
