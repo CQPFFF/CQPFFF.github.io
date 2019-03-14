@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>海明码的思索 | 阿东的卖鱼铺</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: 校验码之海明码date: 2019-03-13 22:20:03tags:计算机结构 算法
+
+&amp;#x2003;看了这位博主acquisitive写的文章，简直醍醐灌   顶。一开始听课课，大致印象是海明码是通过多项式求     解，来判断出是哪一位的数据出错了。但是，还是糊里     糊涂的，不知道为这样求校验码的值，也不知道求校验     码位数x的公式2x-1≥n+x是怎么来的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="海明码的思索">
+<meta property="og:url" content="www.alumocro.top/2019/03/14/海明码的思索/index.html">
+<meta property="og:site_name" content="阿东的卖鱼铺">
+<meta property="og:description" content="title: 校验码之海明码date: 2019-03-13 22:20:03tags:计算机结构 算法
+
+&amp;#x2003;看了这位博主acquisitive写的文章，简直醍醐灌   顶。一开始听课课，大致印象是海明码是通过多项式求     解，来判断出是哪一位的数据出错了。但是，还是糊里     糊涂的，不知道为这样求校验码的值，也不知道求校验     码位数x的公式2x-1≥n+x是怎么来的">
+<meta property="og:image" content="www.alumocro.top/校验码之海明码/20190314092521219.png">
+<meta property="og:updated_time" content="2019-03-14T13:35:55.020Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="海明码的思索">
+<meta name="twitter:description" content="title: 校验码之海明码date: 2019-03-13 22:20:03tags:计算机结构 算法
+
+&amp;#x2003;看了这位博主acquisitive写的文章，简直醍醐灌   顶。一开始听课课，大致印象是海明码是通过多项式求     解，来判断出是哪一位的数据出错了。但是，还是糊里     糊涂的，不知道为这样求校验码的值，也不知道求校验     码位数x的公式2x-1≥n+x是怎么来的">
+<meta name="twitter:image" content="www.alumocro.top/校验码之海明码/20190314092521219.png">
+  
+    <link rel="alternate" href="/atom.xml" title="阿东的卖鱼铺" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">阿东的卖鱼铺</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">新手入门</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="www.alumocro.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-海明码的思索" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/14/海明码的思索/" class="article-date">
+  <time datetime="2019-03-14T13:35:06.000Z" itemprop="datePublished">2019-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      海明码的思索
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 校验码之海明码<br>date: 2019-03-13 22:20:03<br>tags:计算机结构 算法</p>
+<hr>
+<p>&#x2003;看了这位博主<em>acquisitive</em>写的文章，简直醍醐灌   顶。一开始听课课，大致印象是海明码是通过多项式求     解，来判断出是哪一位的数据出错了。但是，还是糊里     糊涂的，不知道为这样求校验码的值，也不知道求校验     码位数x的公式<strong>2x-1≥n+x</strong>是怎么来的.</p>
+<blockquote>
+<p>详细解法，看这篇博客（膜拜）<a href="http://www.cnblogs.com/scrutable/p/6052127.html" target="_blank" rel="external">海明码的编码和校验方法</a>。</p>
+</blockquote>
+<h4 id="接下来，是对这篇博客的一些个人理解和总结。"><a href="#接下来，是对这篇博客的一些个人理解和总结。" class="headerlink" title="接下来，是对这篇博客的一些个人理解和总结。"></a>接下来，是对这篇博客的一些个人理解和总结。</h4><blockquote>
+<p>设数据有n位，校验码有x位。则校验码一共有2x种取值方式。其中需要一种取值方式表示数据正确，剩下2x-1种取值方式表示有一位数据出错。因为编码后的二进制串有n+x位，因此x应该满足<strong>2x-1≥n+x</strong>。</p>
+</blockquote>
+<ul>
+<li>这是重点，也就是求海明码校验码的基础，实质就是解方程。</li>
+<li>接着，就是用二进制表示海明码。则每个二进制对应一个校验位或者数据位。一般书里是用如下方法解释解释校验位和数据为的关系。</li>
+</ul>
+<blockquote>
+<h3 id="校验关系"><a href="#校验关系" class="headerlink" title="校验关系:"></a>校验关系:</h3><h5 id="ensp-每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。"><a href="#ensp-每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。" class="headerlink" title="&ensp; 每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。"></a>&ensp; 每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。</h5></blockquote>
+<p>而上述博客，则用</p>
+<blockquote>
+<h3 id="确定校验码的位置"><a href="#确定校验码的位置" class="headerlink" title="确定校验码的位置"></a>确定校验码的位置</h3><h5 id="校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。"><a href="#校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。" class="headerlink" title="校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。"></a>校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。</h5><p><img src="/校验码之海明码/20190314092521219.png" alt=""><br>&ensp; 为了求出x2,要使所有位置的第二位是1的数据（即形如<em>*1</em>的位置的数据）的异或值为0。即x2^1^1^0^1^0 = 0。因此x2 = 1。</p>
+</blockquote>
+<p>&ensp;  实质一样，用若干个数据为作为方程的未知量x1,x2,x3…，而校验位为方程的常量。</p>
+<blockquote>
+<h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><p>　　假设位置为1011的数据由0变成了1，校验过程为：<br>　　将所有位置形如<strong>*1, </strong>1<em>, </em>1<strong>, 1*</strong>的数据分别异或。</p>
+</blockquote>
+<pre><code>***1: 0^1^0^0^1^1 = 1
+**1*: 1^1^1^0^1^1 = 1
+*1**: 1^0^1^0 = 0 
+1***: 0^1^1^1 = 1
+</code></pre><blockquote>
+<p>　　以上四组中，如果一组异或值为1，说明该组中有数据出错了。<strong>*1 </strong>1<em> 1**</em>的异或都为1，说明出错数据的位置为1011。</p>
+</blockquote>
+<p>　</p>
+<p>　　</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="www.alumocro.top/2019/03/14/海明码的思索/" data-id="cjt8oixe10000c0usdrv97wbh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/14/海明码的校验方法（转）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          海明码的校验方法（转）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/09/辗转相除法的证明-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">辗转相除法的证明</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/14/海明码的校验方法（转）/">海明码的校验方法（转）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/14/海明码的思索/">海明码的思索</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/09/辗转相除法的证明-1/">辗转相除法的证明</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/03/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Fidxx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

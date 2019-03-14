@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>阿东的卖鱼铺</title>
+  <title>海明码的校验方法（转） | 阿东的卖鱼铺</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人学习博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿东的卖鱼铺">
-<meta property="og:url" content="www.alumocro.top/index.html">
+  <meta name="description" content="海明码的编码和校验方法转载自 cnblog海明码（也叫汉明码）具有一位纠错能力。本文以1010110这个二进制数为例解释海明码的编码和校验方法。
+　　编码
+　　确定校验码的位数x
+　　设数据有n位，校验码有x位。则校验码一共有2x种取值方式。其中需要一种取值方式表示数据正确，剩下2x-1种取值方式表示有一位数据出错。因为编码后的二进制串有n+x位，因此x应该满足
+2x-1 ≥　n+x　　　
+　　使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="海明码的校验方法（转）">
+<meta property="og:url" content="www.alumocro.top/2019/03/14/海明码的校验方法（转）/index.html">
 <meta property="og:site_name" content="阿东的卖鱼铺">
-<meta property="og:description" content="个人学习博客">
+<meta property="og:description" content="海明码的编码和校验方法转载自 cnblog海明码（也叫汉明码）具有一位纠错能力。本文以1010110这个二进制数为例解释海明码的编码和校验方法。
+　　编码
+　　确定校验码的位数x
+　　设数据有n位，校验码有x位。则校验码一共有2x种取值方式。其中需要一种取值方式表示数据正确，剩下2x-1种取值方式表示有一位数据出错。因为编码后的二进制串有n+x位，因此x应该满足
+2x-1 ≥　n+x　　　
+　　使">
+<meta property="og:updated_time" content="2019-03-14T13:38:21.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿东的卖鱼铺">
-<meta name="twitter:description" content="个人学习博客">
+<meta name="twitter:title" content="海明码的校验方法（转）">
+<meta name="twitter:description" content="海明码的编码和校验方法转载自 cnblog海明码（也叫汉明码）具有一位纠错能力。本文以1010110这个二进制数为例解释海明码的编码和校验方法。
+　　编码
+　　确定校验码的位数x
+　　设数据有n位，校验码有x位。则校验码一共有2x种取值方式。其中需要一种取值方式表示数据正确，剩下2x-1种取值方式表示有一位数据出错。因为编码后的二进制串有n+x位，因此x应该满足
+2x-1 ≥　n+x　　　
+　　使">
   
     <link rel="alternate" href="/atom.xml" title="阿东的卖鱼铺" type="application/atom+xml">
   
@@ -66,9 +82,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-海明码的校验方法（转）" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-海明码的校验方法（转）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/14/海明码的校验方法（转）/" class="article-date">
   <time datetime="2019-03-14T13:38:08.000Z" itemprop="datePublished">2019-03-14</time>
@@ -81,8 +95,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/海明码的校验方法（转）/">海明码的校验方法（转）</a>
+    <h1 class="article-title" itemprop="name">
+      海明码的校验方法（转）
     </h1>
   
 
@@ -161,179 +175,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-海明码的思索" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/14/海明码的思索/" class="article-date">
-  <time datetime="2019-03-14T13:35:06.000Z" itemprop="datePublished">2019-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/海明码的思索/">海明码的思索</a>
-    </h1>
+    <a href="/2019/03/14/海明码的思索/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">海明码的思索</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: 校验码之海明码<br>date: 2019-03-13 22:20:03<br>tags:计算机结构 算法</p>
-<hr>
-<p>&#x2003;看了这位博主<em>acquisitive</em>写的文章，简直醍醐灌   顶。一开始听课课，大致印象是海明码是通过多项式求     解，来判断出是哪一位的数据出错了。但是，还是糊里     糊涂的，不知道为这样求校验码的值，也不知道求校验     码位数x的公式<strong>2x-1≥n+x</strong>是怎么来的.</p>
-<blockquote>
-<p>详细解法，看这篇博客（膜拜）<a href="http://www.cnblogs.com/scrutable/p/6052127.html" target="_blank" rel="external">海明码的编码和校验方法</a>。</p>
-</blockquote>
-<h4 id="接下来，是对这篇博客的一些个人理解和总结。"><a href="#接下来，是对这篇博客的一些个人理解和总结。" class="headerlink" title="接下来，是对这篇博客的一些个人理解和总结。"></a>接下来，是对这篇博客的一些个人理解和总结。</h4><blockquote>
-<p>设数据有n位，校验码有x位。则校验码一共有2x种取值方式。其中需要一种取值方式表示数据正确，剩下2x-1种取值方式表示有一位数据出错。因为编码后的二进制串有n+x位，因此x应该满足<strong>2x-1≥n+x</strong>。</p>
-</blockquote>
-<ul>
-<li>这是重点，也就是求海明码校验码的基础，实质就是解方程。</li>
-<li>接着，就是用二进制表示海明码。则每个二进制对应一个校验位或者数据位。一般书里是用如下方法解释解释校验位和数据为的关系。</li>
-</ul>
-<blockquote>
-<h3 id="校验关系"><a href="#校验关系" class="headerlink" title="校验关系:"></a>校验关系:</h3><h5 id="ensp-每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。"><a href="#ensp-每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。" class="headerlink" title="&ensp; 每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。"></a>&ensp; 每个数据为用多个校验位进行检验，数据位的海明位号等于校验它的校验位的海明位号之和。</h5></blockquote>
-<p>而上述博客，则用</p>
-<blockquote>
-<h3 id="确定校验码的位置"><a href="#确定校验码的位置" class="headerlink" title="确定校验码的位置"></a>确定校验码的位置</h3><h5 id="校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。"><a href="#校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。" class="headerlink" title="校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。"></a>校验码在二进制串中的位置为2的整数幂。剩下的位置为数据。如图所示。</h5><p><img src="/校验码之海明码/20190314092521219.png" alt=""><br>&ensp; 为了求出x2,要使所有位置的第二位是1的数据（即形如<em>*1</em>的位置的数据）的异或值为0。即x2^1^1^0^1^0 = 0。因此x2 = 1。</p>
-</blockquote>
-<p>&ensp;  实质一样，用若干个数据为作为方程的未知量x1,x2,x3…，而校验位为方程的常量。</p>
-<blockquote>
-<h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><p>　　假设位置为1011的数据由0变成了1，校验过程为：<br>　　将所有位置形如<strong>*1, </strong>1<em>, </em>1<strong>, 1*</strong>的数据分别异或。</p>
-</blockquote>
-<pre><code>***1: 0^1^0^0^1^1 = 1
-**1*: 1^1^1^0^1^1 = 1
-*1**: 1^0^1^0 = 0 
-1***: 0^1^1^1 = 1
-</code></pre><blockquote>
-<p>　　以上四组中，如果一组异或值为1，说明该组中有数据出错了。<strong>*1 </strong>1<em> 1**</em>的异或都为1，说明出错数据的位置为1011。</p>
-</blockquote>
-<p>　</p>
-<p>　　</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="www.alumocro.top/2019/03/14/海明码的思索/" data-id="cjt8oixe10000c0usdrv97wbh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-辗转相除法的证明-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/09/辗转相除法的证明-1/" class="article-date">
-  <time datetime="2019-03-09T03:41:10.000Z" itemprop="datePublished">2019-03-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/09/辗转相除法的证明-1/">辗转相除法的证明</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="辗转相除法的代码："><a href="#辗转相除法的代码：" class="headerlink" title="辗转相除法的代码："></a><strong>辗转相除法的代码：</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> t=m%n;</div><div class="line">    <span class="keyword">if</span>(t==<span class="number">0</span>) </div><div class="line">    <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        m=n;</div><div class="line">        b=t;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution:~~"></a>Solution:~~
-        
-          <p class="article-more-link">
-            <a href="/2019/03/09/辗转相除法的证明-1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="www.alumocro.top/2019/03/09/辗转相除法的证明-1/" data-id="cjt8oixed0003c0usc21mymif" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/03/hello-world/" class="article-date">
-  <time datetime="2019-03-03T14:27:20.325Z" itemprop="datePublished">2019-03-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop.png" alt=""></p>
-<blockquote>
-<p><strong>本版本仅适用于Win环境</strong><br>本文关键字： <strong>Hexo绿色版</strong>，<strong>Hexo便携版</strong>，<strong>Hexo配置</strong>，<strong>Hexo</strong>，<strong>U盘</strong></p>
-</blockquote>
-<p><a href="https://hexo.io/">Hexo</a>是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Markdown 的所有功能；具有超快生成速度，让上百个页面在几秒内瞬间完成渲染；还拥有各式各样的插件等等。</p>
-<p>但是就像很多教程里面写的那样，搭建 Hexo 本地环境，需要安装 Node.js、Git 以及使用 npm 进行安装和配置。这对于毫无经验的新手来说，是一个很大的挑战。同时，由于这些环境的存在，导致如果需要更换计算机的时候，重新安装配置一个新的Hexo环境，又得花费一些功夫。</p>
-<p>所以呢，锵锵，我们整合了一个 Hexo 便携版，来简化本地环境的部署。</p>
-<p>####<strong>版本介绍</strong><br>那么所谓的便携版到底是什么？便携版就是将 Hexo 本地环境所需要的各种依赖环境的整合到一起，做成的不需要安装的版本。</p>
-<p>本便携版（Release 1.0.0）所包含的软件如下：</p>
-<blockquote>
-<ul>
-<li>Git: 2.7.4</li>
-<li>Nodejs: 6.10.1</li>
-<li>Npm: 4.4.1</li>
-<li>Hexo: 3.2.2</li>
-</ul>
-</blockquote>
-<p>为了便携的需要，不能配置固定的环境变量，所以除此之外还有相应的批处理文件，下文将详细介绍。<br>~~
-        
-          <p class="article-more-link">
-            <a href="/2019/03/03/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="www.alumocro.top/2019/03/03/hello-world/" data-id="cjt8oixeb0002c0us8ihwe4j8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
